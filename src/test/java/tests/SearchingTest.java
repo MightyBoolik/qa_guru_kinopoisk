@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class SearchingTest extends TestBase {
     @Test
-    void findFilmTest() {
+    void findFilm() {
         open("https://www.kinopoisk.ru/");
         $(By.name("kp_query")).val("Остров проклятых");
         $(".kinopoisk-header-search-form__suggest-container .kinopoisk-header-suggest-group").shouldHave(text("Shutter Island, 2009")).click();

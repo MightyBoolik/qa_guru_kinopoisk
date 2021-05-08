@@ -21,7 +21,7 @@ public class MainPageTest extends TestBase {
     @Owner("Булат Кучаев")
     @Test
     @DisplayName("Проверка загрузки элемента на главной странице")
-    void visibilityOnPageTest() {
+    void visibilityOnPage() {
         open("https://www.kinopoisk.ru/");
         $(".desktop-layout-with-sidebar__content").shouldHave(text("Выбор редакции"));
 
