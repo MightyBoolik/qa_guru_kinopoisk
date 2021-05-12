@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class SearchingTest extends TestBase {
+    MainPageTest url = new MainPageTest();
     private String  movieName = "Остров проклятых",
             engName = "Shutter Island, 2009",
             headerClass = ".kinopoisk-header-search-form__suggest-container .kinopoisk-header-suggest-group";
@@ -21,7 +22,7 @@ public class SearchingTest extends TestBase {
     @Owner("Булат Кучаев")
     @Tag("web")
     void findFilm() {
-        open("");
+        open(url.address);
         $(By.name("kp_query")).val(movieName);
         $(headerClass).shouldHave(text(engName)).click();
         $("#__next").shouldHave(text(movieName));

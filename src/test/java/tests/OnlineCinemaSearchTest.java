@@ -10,12 +10,13 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 public class OnlineCinemaSearchTest extends TestBase {
+    MainPageTest url = new MainPageTest();
     @Test
     @DisplayName("Поиск фильма в онлайн-кинотеатре")
     @Owner("Булат Кучаев")
     @Tag("web")
     void searchFilm() {
-        open("");
+        open(url.address);
         $(".kinopoisk-header-featured-menu__item").shouldHave(text("Онлайн-кинотеатр")).click();
         $(".HeaderContent__search-button--2aqqT").click();
         $(".SuggestSearch__input--75Gpy").val("Мортал Комбат");
