@@ -7,7 +7,7 @@ import org.aeonbits.owner.Config;
         "system:properties",
         "classpath:remote.properties"
 })
-public interface WebConfig extends Config {
+public interface DriverConfig extends Config {
     @Config.Key("url")
     String url();
 
@@ -16,5 +16,8 @@ public interface WebConfig extends Config {
 
     @Config.Key("web.remote.driver.password")
     String webRemoteDriverPassword();
+
+    @Key("video.storage")
+    String videoStorage();
 
 }

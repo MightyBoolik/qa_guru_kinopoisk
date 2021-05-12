@@ -1,7 +1,7 @@
 package helpers;
 
 import config.AuthorizationConfig;
-import config.WebConfig;
+import config.DriverConfig;
 import org.aeonbits.owner.ConfigFactory;
 
 public class WebConfigHelper {
@@ -37,8 +37,8 @@ public class WebConfigHelper {
                 AuthorizationConfig.class, System.getProperties());
     }
 
-    private static WebConfig getWebConfig() {
+    private static DriverConfig getWebConfig() {
         return ConfigFactory.newInstance().create(
-                WebConfig.class, System.getProperties());
+                DriverConfig.class, System.getProperties());
     }
 }
