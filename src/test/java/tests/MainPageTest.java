@@ -20,7 +20,7 @@ public class MainPageTest extends TestBase {
     @DisplayName("Проверка загрузки элемента на главной странице")
     @Owner("Булат Кучаев")
     @Tag("web")
-    @JiraIssue("QC3-22")
+    @JiraIssue("QC3-36")
     void visibilityOnPage() {
         open("");
         $(".desktop-layout-with-sidebar__content").shouldHave(text(primaryTitle));
@@ -30,7 +30,7 @@ public class MainPageTest extends TestBase {
     @DisplayName("Вход на сайт через учетную запись Yandex")
     @Owner("Булат Кучаев")
     @Tag("web")
-    @JiraIssue("QC3-22")
+    @JiraIssue("QC3-36")
     void loginWithYandex() {
         open("");
         $(".desktop-layout-with-sidebar .header-v4__user-bar").shouldBe(visible).click();
