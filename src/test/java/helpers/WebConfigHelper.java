@@ -1,6 +1,5 @@
 package helpers;
 
-import config.AuthorizationConfig;
 import config.DriverConfig;
 import org.aeonbits.owner.ConfigFactory;
 
@@ -12,10 +11,10 @@ public class WebConfigHelper {
                 getWebConfig().webRemoteDriverPassword());
     }
     public static String getTestUsername() {
-        return getAuthorizationConfig().testUsername();
+        return getDriverConfig().testUsername();
     }
     public static String getTestPassword() {
-        return getAuthorizationConfig().testPassword();
+        return getDriverConfig().testPassword();
     }
     public static String getUrl() {
         return getWebConfig().url();
@@ -32,9 +31,9 @@ public class WebConfigHelper {
     public static boolean isVideoOn() {
         return getWebVideoStorage() != null;
     }
-    private static AuthorizationConfig getAuthorizationConfig() {
+    private static DriverConfig getDriverConfig() {
         return ConfigFactory.newInstance().create(
-                AuthorizationConfig.class, System.getProperties());
+                DriverConfig.class, System.getProperties());
     }
 
     private static DriverConfig getWebConfig() {

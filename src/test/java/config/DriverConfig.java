@@ -20,4 +20,9 @@ public interface DriverConfig extends Config {
     @Key("video.storage")
     String videoStorage();
 
+    @Key("yandex.login")
+    String testUsername();
+
+    @Key("yandex.password")
+    String testPassword();
 }

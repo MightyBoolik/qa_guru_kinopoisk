@@ -14,7 +14,7 @@ import static helpers.WebConfigHelper.getTestPassword;
 import static helpers.WebConfigHelper.getTestUsername;
 
 public class MainPageTest extends TestBase {
-    public String address = "https://www.kinopoisk.ru/";
+    //public String address = "https://www.kinopoisk.ru/";
     private String primaryTitle = "Выбор редакции";
 
     @Test
@@ -23,7 +23,7 @@ public class MainPageTest extends TestBase {
     @Tag("web")
     @JiraIssue("QC3-36")
     void visibilityOnPage() {
-        open(address);
+        open("");
         $(".desktop-layout-with-sidebar__content").shouldHave(text(primaryTitle));
     }
 
@@ -33,7 +33,7 @@ public class MainPageTest extends TestBase {
     @Tag("web")
     @JiraIssue("QC3-36")
     void loginWithYandex() {
-        open(address);
+        open("");
         $(".desktop-layout-with-sidebar .header-v4__user-bar").shouldBe(visible).click();
         $("#passp-field-login").val(getTestUsername()).pressEnter();
         $("#passp-field-passwd").val(getTestPassword()).pressEnter();
