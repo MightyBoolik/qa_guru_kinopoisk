@@ -19,7 +19,7 @@ public class ConfigHelper {
     public static String getWebRemoteDriver() {
         return String.format(System.getProperty("web.remote.driver"),
                 getWebConfig().webRemoteDriverUser(),
-                getWebConfig().webRemoteDriverPassword()
+                getWebConfig().webRemoteDriverPassword(),
                 getWebConfig().webRemoteDriverUrl());
     }
     public static boolean isRemoteWebDriver() {
