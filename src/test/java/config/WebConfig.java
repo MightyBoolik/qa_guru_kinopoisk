@@ -17,6 +17,4 @@ public interface WebConfig extends Config {
     @Config.Key("web.remote.driver.password")
     String webRemoteDriverPassword();
 
-    @Key("web.remote.driver.url")
-    String webRemoteDriverUrl();
 }

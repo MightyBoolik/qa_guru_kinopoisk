@@ -10,8 +10,8 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static config.ConfigHelper.getTestPassword;
-import static config.ConfigHelper.getTestUsername;
+import static helpers.WebConfigHelper.getTestPassword;
+import static helpers.WebConfigHelper.getTestUsername;
 
 public class MainPageTest extends TestBase {
     private String primaryTitle = "Выбор редакции";

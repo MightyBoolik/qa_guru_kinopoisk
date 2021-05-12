@@ -4,7 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static config.ConfigHelper.isVideoOn;
+import static helpers.WebConfigHelper.isVideoOn;
 import static helpers.AttachmentHelper.*;
 import static helpers.DriverHelper.*;
 
