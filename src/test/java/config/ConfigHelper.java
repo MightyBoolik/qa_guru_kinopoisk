@@ -3,6 +3,12 @@ package config;
 import org.aeonbits.owner.ConfigFactory;
 
 public class ConfigHelper {
+    public static String getTestUsername() {
+        return getAuthorizationConfig().testUsername();
+    }
+    public static String getTestPassword() {
+        return getAuthorizationConfig().testPassword();
+    }
     public static String getUrl() {
         return getWebConfig().url();
     }
@@ -15,7 +21,6 @@ public class ConfigHelper {
                 getWebConfig().webRemoteDriverUser(),
                 getWebConfig().webRemoteDriverPassword());
     }
-
     public static boolean isRemoteWebDriver() {
         return System.getProperty("web.remote.driver") != null;
     }
@@ -27,7 +32,10 @@ public class ConfigHelper {
     public static boolean isVideoOn() {
         return getWebVideoStorage() != null;
     }
-
+    private static AuthorizationConfig getAuthorizationConfig() {
+        return ConfigFactory.newInstance().create(
+                AuthorizationConfig.class, System.getProperties());
+    }
     private static WebConfig getWebConfig() {
         return ConfigFactory.newInstance().create(WebConfig.class, System.getProperties());
     }
@@ -36,4 +44,4 @@ public class ConfigHelper {
         return ConfigFactory.newInstance().create(SearchConfig.class, System.getProperties());
     }
 }
-}
+

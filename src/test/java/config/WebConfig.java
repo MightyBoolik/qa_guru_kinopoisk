@@ -5,7 +5,7 @@ import org.aeonbits.owner.Config;
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:remote_config.properties"
+        "classpath:remote.properties"
 })
 public interface WebConfig extends Config {
     @Config.Key("url")
@@ -16,4 +16,10 @@ public interface WebConfig extends Config {
 
     @Config.Key("web.remote.driver.password")
     String webRemoteDriverPassword();
+
+    @Config.Key("yandex.login")
+    String yandexLogin();
+
+    @Config.Key("yandex.password")
+    String yandexPassword();
 }
