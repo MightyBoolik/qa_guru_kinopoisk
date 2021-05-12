@@ -17,6 +17,9 @@ public class WebConfigHelper {
     public static String getTestPassword() {
         return getAuthorizationConfig().testPassword();
     }
+    public static String getUrl() {
+        return getWebConfig().url();
+    }
 
     public static boolean isRemoteWebDriver() {
         return System.getProperty("web.remote.driver") != null;
