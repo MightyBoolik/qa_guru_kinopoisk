@@ -17,9 +17,6 @@ public interface WebConfig extends Config {
     @Config.Key("web.remote.driver.password")
     String webRemoteDriverPassword();
 
-    @Config.Key("yandex.login")
-    String yandexLogin();
-
-    @Config.Key("yandex.password")
-    String yandexPassword();
+    @Key("web.remote.driver.url")
+    String webRemoteDriverUrl();
 }

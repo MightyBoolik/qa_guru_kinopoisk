@@ -3,7 +3,9 @@ package helpers;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import config.ConfigHelper;
+import config.WebConfig;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -26,6 +28,7 @@ public class DriverHelper {
             Configuration.browserCapabilities = capabilities;
             Configuration.remote = ConfigHelper.getWebRemoteDriver();
         }
+
     }
     public static String getConsoleLogs () {
         return String.join("\n", Selenide.getWebDriverLogs(String.valueOf(BROWSER)));
