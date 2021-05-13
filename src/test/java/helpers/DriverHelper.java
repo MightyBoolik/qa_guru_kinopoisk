@@ -17,18 +17,6 @@ public class DriverHelper {
         return ConfigFactory.newInstance().create(DriverConfig.class, System.getProperties());
     }
 
-    public static void configureDriver() {
-        addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
-        Configuration.startMaximized = true;
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        if (isRemoteWebDriver()) {
-            capabilities.setCapability("enableVNC", true);
-            capabilities.setCapability("enableVideo", true);
-            Configuration.browserCapabilities = capabilities;
-            Configuration.remote = getWebRemoteDriver();
-        }
-    }
-
     public static String getWebRemoteDriver() {
         // https://%s:%s@selenoid.autotests.cloud/wd/hub/
         return String.format(getDriverConfig().webRemoteUrl(),
@@ -54,5 +42,17 @@ public class DriverHelper {
 
     public static boolean isVideoOn() {
         return !getVideoUrl().equals("");
+    }
+
+    public static void configureDriver() {
+        addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
+        Configuration.startMaximized = true;
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        if (isRemoteWebDriver()) {
+            capabilities.setCapability("enableVNC", true);
+            capabilities.setCapability("enableVideo", true);
+            Configuration.browserCapabilities = capabilities;
+            Configuration.remote = getWebRemoteDriver();
+        }
     }
 }
