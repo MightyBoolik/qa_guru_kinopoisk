@@ -4,12 +4,8 @@ import config.DriverConfig;
 import org.aeonbits.owner.ConfigFactory;
 
 public class WebConfigHelper {
-    public static String getWebRemoteDriver() {
-        // https://%s:%s@selenoid.autotests.cloud/wd/hub/
-        return String.format(System.getProperty("web.remote.driver"),
-                getWebConfig().webRemoteDriverUser(),
-                getWebConfig().webRemoteDriverPassword());
-    }
+
+
     public static String getTestUsername() {
         return getDriverConfig().testUsername();
     }

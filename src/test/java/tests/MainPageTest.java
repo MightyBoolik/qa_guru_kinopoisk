@@ -10,8 +10,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static helpers.WebConfigHelper.getTestPassword;
-import static helpers.WebConfigHelper.getTestUsername;
+import static helpers.WebConfigHelper.*;
 
 public class MainPageTest extends TestBase {
     //public String address = "https://www.kinopoisk.ru/";
@@ -23,7 +22,7 @@ public class MainPageTest extends TestBase {
     @Tag("web")
     @JiraIssue("QC3-36")
     void visibilityOnPage() {
-        open("");
+        open(getUrl());
         $(".desktop-layout-with-sidebar__content").shouldHave(text(primaryTitle));
     }
 
@@ -33,7 +32,7 @@ public class MainPageTest extends TestBase {
     @Tag("web")
     @JiraIssue("QC3-36")
     void loginWithYandex() {
-        open("");
+        open(getUrl());
         $(".desktop-layout-with-sidebar .header-v4__user-bar").shouldBe(visible).click();
         $("#passp-field-login").val(getTestUsername()).pressEnter();
         $("#passp-field-passwd").val(getTestPassword()).pressEnter();

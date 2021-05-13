@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
+import static helpers.WebConfigHelper.getUrl;
 
 public class OnlineCinemaSearchTest extends TestBase {
     //MainPageTest url = new MainPageTest();
@@ -16,7 +17,7 @@ public class OnlineCinemaSearchTest extends TestBase {
     @Owner("Булат Кучаев")
     @Tag("web")
     void searchFilm() {
-        open("");
+        open(getUrl());
         $(".kinopoisk-header-featured-menu__item").shouldHave(text("Онлайн-кинотеатр")).click();
         $(".HeaderContent__search-button--2aqqT").click();
         $(".SuggestSearch__input--75Gpy").val("Мортал Комбат");

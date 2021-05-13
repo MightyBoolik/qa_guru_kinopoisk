@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static helpers.WebConfigHelper.getUrl;
 
 public class MoreMaterialsTest extends TestBase {
     //MainPageTest url = new MainPageTest();
@@ -16,7 +17,7 @@ public class MoreMaterialsTest extends TestBase {
     @Owner("Булат Кучаев")
     @Tag("web")
     void watchLaterButton() {
-        open("");
+        open(getUrl());
         $(".main-page-media-block__main .ui-button").click();
         $(".paginator__page-relative").shouldBe(visible).click();
         $(".media-desktop-list-page-layout__body").shouldBe(visible);

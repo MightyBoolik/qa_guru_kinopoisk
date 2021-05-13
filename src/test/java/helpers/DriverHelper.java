@@ -20,27 +20,34 @@ public class DriverHelper {
 
     public static void configureDriver() {
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
-
         Configuration.startMaximized = true;
         Configuration.baseUrl = getUrl();
+        ;
+        DesiredCapabilities capabilities = new DesiredCapabilities();
         if (WebConfigHelper.isRemoteWebDriver()) {
-            DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);
             Configuration.browserCapabilities = capabilities;
-            Configuration.remote = WebConfigHelper.getWebRemoteDriver();
+            Configuration.remote = getWebRemoteDriver();
         }
     }
 
-    public static String getSessionId() {
-        return ((RemoteWebDriver) getWebDriver()).getSessionId().toString().replace("selenoid", "");
+    public static String getWebRemoteDriver() {
+        // https://%s:%s@selenoid.autotests.cloud/wd/hub/
+        return String.format(System.getProperty("web.remote.driver"),
+                getDriverConfig().webRemoteDriverUser(),
+                getDriverConfig().webRemoteDriverPassword(),
+                getDriverConfig().url());
     }
+        public static String getSessionId () {
+            return ((RemoteWebDriver) getWebDriver()).getSessionId().toString().replace("selenoid", "");
+        }
 
-    public static String getConsoleLogs() {
-        return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
-    }
+        public static String getConsoleLogs () {
+            return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
+        }
 
-    public static String getVideoUrl() {
-        return getDriverConfig().videoStorage();
+        public static String getVideoUrl () {
+            return getDriverConfig().videoStorage();
+        }
     }
-}

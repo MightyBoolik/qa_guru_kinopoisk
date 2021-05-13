@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static helpers.WebConfigHelper.getUrl;
 
 public class SearchingTest extends TestBase {
     //MainPageTest url = new MainPageTest();
@@ -22,7 +23,7 @@ public class SearchingTest extends TestBase {
     @Owner("Булат Кучаев")
     @Tag("web")
     void findFilm() {
-        open("");
+        open(getUrl());
         $(By.name("kp_query")).val(movieName);
         $(headerClass).shouldHave(text(engName)).click();
         $("#__next").shouldHave(text(movieName));
