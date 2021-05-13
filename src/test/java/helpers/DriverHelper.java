@@ -10,7 +10,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
-import static helpers.WebConfigHelper.getUrl;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class DriverHelper {
@@ -21,10 +20,8 @@ public class DriverHelper {
     public static void configureDriver() {
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         Configuration.startMaximized = true;
-        Configuration.baseUrl = getUrl();
-        ;
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        if (WebConfigHelper.isRemoteWebDriver()) {
+        if (isRemoteWebDriver()) {
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);
             Configuration.browserCapabilities = capabilities;
@@ -34,19 +31,28 @@ public class DriverHelper {
 
     public static String getWebRemoteDriver() {
         // https://%s:%s@selenoid.autotests.cloud/wd/hub/
-        return String.format(getDriverConfig().url(),
+        return String.format(getDriverConfig().webRemoteUrl(),
                 getDriverConfig().webRemoteDriverUser(),
                 getDriverConfig().webRemoteDriverPassword());
     }
-        public static String getSessionId () {
-            return ((RemoteWebDriver) getWebDriver()).getSessionId().toString().replace("selenoid", "");
-        }
 
-        public static String getConsoleLogs () {
-            return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
-        }
-
-        public static String getVideoUrl () {
-            return getDriverConfig().videoStorage();
-        }
+    public static boolean isRemoteWebDriver() {
+        return !getDriverConfig().webRemoteUrl().equals("");
     }
+
+    public static String getSessionId() {
+        return ((RemoteWebDriver) getWebDriver()).getSessionId().toString().replace("selenoid", "");
+    }
+
+    public static String getConsoleLogs() {
+        return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
+    }
+
+    public static String getVideoUrl() {
+        return getDriverConfig().videoStorage();
+    }
+
+    public static boolean isVideoOn() {
+        return !getVideoUrl().equals("");
+    }
+}

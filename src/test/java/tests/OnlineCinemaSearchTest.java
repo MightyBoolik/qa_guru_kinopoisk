@@ -8,10 +8,8 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
-import static helpers.WebConfigHelper.getUrl;
 
 public class OnlineCinemaSearchTest extends TestBase {
-    //MainPageTest url = new MainPageTest();
     @Test
     @DisplayName("Поиск фильма в онлайн-кинотеатре")
     @Owner("Булат Кучаев")

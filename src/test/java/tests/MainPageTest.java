@@ -1,6 +1,7 @@
 package tests;
 
 import allureAnnotations.JiraIssue;
+import config.DriverConfig;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -10,11 +11,12 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static helpers.WebConfigHelper.*;
+import static tests.UserData.getTestPassword;
+import static tests.UserData.getTestUsername;
 
 public class MainPageTest extends TestBase {
-    //public String address = "https://www.kinopoisk.ru/";
-    private String primaryTitle = "Выбор редакции";
+
+    private final String primaryTitle = "Выбор редакции";
 
     @Test
     @DisplayName("Проверка загрузки элемента на главной странице")
