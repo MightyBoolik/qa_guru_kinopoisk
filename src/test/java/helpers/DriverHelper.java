@@ -34,10 +34,9 @@ public class DriverHelper {
 
     public static String getWebRemoteDriver() {
         // https://%s:%s@selenoid.autotests.cloud/wd/hub/
-        return String.format(System.getProperty("web.remote.driver"),
+        return String.format(getDriverConfig().url(),
                 getDriverConfig().webRemoteDriverUser(),
-                getDriverConfig().webRemoteDriverPassword(),
-                getDriverConfig().url());
+                getDriverConfig().webRemoteDriverPassword());
     }
         public static String getSessionId () {
             return ((RemoteWebDriver) getWebDriver()).getSessionId().toString().replace("selenoid", "");

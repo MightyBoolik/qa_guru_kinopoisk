@@ -22,7 +22,7 @@ public class MainPageTest extends TestBase {
     @Tag("web")
     @JiraIssue("QC3-36")
     void visibilityOnPage() {
-        open(getUrl());
+        open("");
         $(".desktop-layout-with-sidebar__content").shouldHave(text(primaryTitle));
     }
 
@@ -32,7 +32,7 @@ public class MainPageTest extends TestBase {
     @Tag("web")
     @JiraIssue("QC3-36")
     void loginWithYandex() {
-        open(getUrl());
+        open("");
         $(".desktop-layout-with-sidebar .header-v4__user-bar").shouldBe(visible).click();
         $("#passp-field-login").val(getTestUsername()).pressEnter();
         $("#passp-field-passwd").val(getTestPassword()).pressEnter();

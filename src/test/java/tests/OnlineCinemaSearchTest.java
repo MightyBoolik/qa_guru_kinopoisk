@@ -17,7 +17,7 @@ public class OnlineCinemaSearchTest extends TestBase {
     @Owner("Булат Кучаев")
     @Tag("web")
     void searchFilm() {
-        open(getUrl());
+        open("");
         $(".kinopoisk-header-featured-menu__item").shouldHave(text("Онлайн-кинотеатр")).click();
         $(".HeaderContent__search-button--2aqqT").click();
         $(".SuggestSearch__input--75Gpy").val("Мортал Комбат");

@@ -17,7 +17,7 @@ public class MoreMaterialsTest extends TestBase {
     @Owner("Булат Кучаев")
     @Tag("web")
     void watchLaterButton() {
-        open(getUrl());
+        open("");
         $(".main-page-media-block__main .ui-button").click();
         $(".paginator__page-relative").shouldBe(visible).click();
         $(".media-desktop-list-page-layout__body").shouldBe(visible);

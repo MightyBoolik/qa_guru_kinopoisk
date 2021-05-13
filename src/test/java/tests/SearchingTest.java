@@ -23,7 +23,7 @@ public class SearchingTest extends TestBase {
     @Owner("Булат Кучаев")
     @Tag("web")
     void findFilm() {
-        open(getUrl());
+        open("");
         $(By.name("kp_query")).val(movieName);
         $(headerClass).shouldHave(text(engName)).click();
         $("#__next").shouldHave(text(movieName));
