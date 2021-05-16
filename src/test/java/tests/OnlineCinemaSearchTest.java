@@ -18,6 +18,7 @@ public class OnlineCinemaSearchTest extends TestBase {
         open("");
         $(".kinopoisk-header-featured-menu__item").shouldHave(text("Онлайн-кинотеатр")).click();
         $(".HeaderContent__search-button--2aqqT").click();
+        $(".SuggestSearch__input--75Gpy").clear();
         $(".SuggestSearch__input--75Gpy").val("Мортал Комбат");
         $(".SuggestList__content--2B-cT").shouldHave(text("Смертельная битва")).click();
         $(By.name("Trailer")).click();

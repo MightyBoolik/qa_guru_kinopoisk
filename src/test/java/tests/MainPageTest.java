@@ -36,6 +36,7 @@ public class MainPageTest extends TestBase {
         open("");
         $(".desktop-layout-with-sidebar .header-v4__user-bar").shouldBe(visible).click();
         $("#passp-field-login").val(getTestUsername()).pressEnter();
+        $("#passp-field-passwd").clear();
         $("#passp-field-passwd").val(getTestPassword()).pressEnter();
         $(".desktop-layout-with-sidebar__content").shouldHave(text(primaryTitle));
     }
