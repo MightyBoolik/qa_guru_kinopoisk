@@ -1,7 +1,6 @@
 package tests;
 
 import allureAnnotations.JiraIssue;
-import config.DriverConfig;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
