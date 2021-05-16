@@ -20,6 +20,5 @@ public class MoreMaterialsTest extends TestBase {
         $(".main-page-media-block__main .ui-button").click();
         $(".paginator__page-relative").shouldBe(visible).click();
         $(".media-desktop-list-page-layout__body").shouldBe(visible);
-
     }
 }
