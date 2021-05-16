@@ -26,7 +26,7 @@ public class DriverHelper {
 
     public static boolean isRemoteWebDriver() {
         return !getDriverConfig().webRemoteUrl().equals("");
-    }
+   }
 
     public static String getSessionId() {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString().replace("selenoid", "");
@@ -53,6 +53,6 @@ public class DriverHelper {
             capabilities.setCapability("enableVideo", true);
             Configuration.browserCapabilities = capabilities;
             Configuration.remote = getWebRemoteDriver();
-        }
+       }
     }
 }
