@@ -5,7 +5,7 @@ import org.aeonbits.owner.Config;
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:web.url.properties"
+        "classpath:config/web.url.properties"
 })
 public interface DataConfig extends Config {
     @Key("web.url")

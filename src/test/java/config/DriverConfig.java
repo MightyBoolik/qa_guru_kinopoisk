@@ -7,7 +7,7 @@ import static org.aeonbits.owner.Config.*;
 @LoadPolicy(LoadType.MERGE)
 @Sources({
         "system:properties",
-        "classpath:web.remote.properties"
+        "classpath:config/web.remote.properties"
 })
 public interface DriverConfig extends Config {
     @Key("browser.name")
