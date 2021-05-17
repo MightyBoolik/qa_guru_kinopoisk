@@ -42,8 +42,8 @@ public class MainPageTest extends TestBase {
         open("");
         $(loginButton).shouldBe(visible).click();
         $(loginField).val(getTestUsername()).pressEnter();
-        $(passwordField).val(getTestPassword()).clear();
-        $(passwordField).val(getTestPassword()).click();
+        $(passwordField).clear();
+        $(passwordField).val(getTestPassword()).pressEnter()
         $(mainPage).shouldHave(text(primaryTitle));
     }
 }
