@@ -1,6 +1,7 @@
 package tests;
 
 import allureAnnotations.JiraIssue;
+import com.codeborne.selenide.Selectors;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -41,7 +42,8 @@ public class MainPageTest extends TestBase {
         open("");
         $(loginButton).shouldBe(visible).click();
         $(loginField).val(getTestUsername()).pressEnter();
-        $(passwordField).val(getTestPassword()).pressEnter();
+        $(passwordField).val(getTestPassword());
+        $(".passp-auth-content .Button2").click();
         $(mainPage).shouldHave(text(primaryTitle));
     }
 }
