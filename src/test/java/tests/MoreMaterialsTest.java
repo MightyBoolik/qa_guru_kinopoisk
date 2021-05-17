@@ -10,7 +10,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class MoreMaterialsTest extends TestBase {
 
-
     @Test
     @Owner("Булат Кучаев")
     @Tag("web")
