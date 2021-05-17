@@ -17,6 +17,7 @@ public class MoreMaterialsTest extends TestBase {
     void watchLaterButton() {
         open("");
         $(".main-page-media-block__main .ui-button").click();
+        sleep(3000);
         $(".paginator__page-relative").shouldBe(visible).click();
         $(".media-desktop-list-page-layout__body").shouldBe(visible);
     }
