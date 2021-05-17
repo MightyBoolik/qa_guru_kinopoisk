@@ -17,9 +17,9 @@ public class SearchingTest extends TestBase {
             headerClass = ".kinopoisk-header-search-form__suggest-container .kinopoisk-header-suggest-group";
 
     @Test
-    @DisplayName("Поиска фильма по названию")
     @Owner("Булат Кучаев")
     @Tag("web")
+    @DisplayName("Поиска фильма по названию")
     void findFilm() {
         open("");
         $(By.name("kp_query")).val(movieName);

@@ -15,28 +15,33 @@ import static tests.UserData.getTestUsername;
 
 public class MainPageTest extends TestBase {
 
-    private final String primaryTitle = "Выбор редакции";
+    private String primaryTitle = "Выбор редакции",
+            mainPage = ".desktop-layout-with-sidebar__content",
+            loginButton = ".desktop-layout-with-sidebar .header-v4__user-bar",
+            loginField = "#passp-field-login",
+            passwordField = "#passp-field-passwd";
+
 
     @Test
-    @DisplayName("Проверка загрузки элемента на главной странице")
     @Owner("Булат Кучаев")
     @Tag("web")
     @JiraIssue("QC3-36")
+    @DisplayName("Проверка загрузки элемента на главной странице")
     void visibilityOnPage() {
         open("");
-        $(".desktop-layout-with-sidebar__content").shouldHave(text(primaryTitle));
+        $(mainPage).shouldHave(text(primaryTitle));
     }
 
     @Test
-    @DisplayName("Вход на сайт через учетную запись Yandex")
     @Owner("Булат Кучаев")
     @Tag("web")
     @JiraIssue("QC3-36")
+    @DisplayName("Вход на сайт через учетную запись Yandex")
     void loginWithYandex() {
         open("");
-        $(".desktop-layout-with-sidebar .header-v4__user-bar").shouldBe(visible).click();
-        $("#passp-field-login").val(getTestUsername()).pressEnter();
-        $("#passp-field-passwd").val(getTestPassword()).pressEnter();
-        $(".desktop-layout-with-sidebar__content").shouldHave(text(primaryTitle));
+        $(loginButton).shouldBe(visible).click();
+        $(loginField).val(getTestUsername()).pressEnter();
+        $(passwordField).val(getTestPassword()).pressEnter();
+        $(mainPage).shouldHave(text(primaryTitle));
     }
 }
