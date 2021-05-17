@@ -16,7 +16,6 @@ public class MoreMaterialsTest extends TestBase {
     @DisplayName("Тест кнопки 'Больше материалов' и переключение нумерации страниц")
     void watchLaterButton() {
         open("");
-        sleep(5000);
         $(".main-page-media-block__main .ui-button").click();
         $(".paginator__page-relative").shouldBe(visible).click();
         $(".media-desktop-list-page-layout__body").shouldBe(visible);

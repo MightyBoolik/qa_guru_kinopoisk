@@ -5,6 +5,7 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -41,7 +42,7 @@ public class MainPageTest extends TestBase {
         open("");
         $(loginButton).shouldBe(visible).click();
         $(loginField).val(getTestUsername()).pressEnter();
-        $(passwordField).val(getTestPassword()).pressEnter();
+        $(passwordField).val(getTestPassword()).sendKeys(Keys.ENTER);
         $(mainPage).shouldHave(text(primaryTitle));
     }
 }
