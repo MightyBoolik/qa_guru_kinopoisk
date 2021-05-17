@@ -13,6 +13,7 @@ public class TestBase {
     @BeforeAll
     public static void configHelper() {
         Configuration.baseUrl = getWebUrl();
+        Configuration.clickViaJs = true;
         configureDriver();
     }
 
