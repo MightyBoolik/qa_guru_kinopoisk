@@ -10,13 +10,14 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class MoreMaterialsTest extends TestBase {
 
+
     @Test
     @Owner("Булат Кучаев")
     @Tag("web")
     @DisplayName("Тест кнопки 'Больше материалов' и переключение нумерации страниц")
     void watchLaterButton() {
         open("");
-        $(".main-page-media-block .ui-button").click();
+        $(".main-page-media-block .ui-button").shouldBe(visible).click();
         $(".paginator__page-relative").shouldBe(visible).click();
         $(".media-desktop-list-page-layout__body").shouldBe(visible);
     }
