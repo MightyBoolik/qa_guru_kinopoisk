@@ -2,19 +2,27 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.LoadPolicy(Config.LoadType.MERGE)
-@Config.Sources({
+import static org.aeonbits.owner.Config.*;
+
+@LoadPolicy(LoadType.MERGE)
+@Sources({
         "system:properties",
         "classpath:web.remote.properties"
 })
 public interface DriverConfig extends Config {
-    @Config.Key("web.remote.url")
+    @Key("browser.name")
+    String browserName();
+
+    @Key("browser.version")
+    String browserVersion();
+
+    @Key("web.remote.url")
     String webRemoteUrl();
 
-    @Config.Key("web.remote.driver.user")
+    @Key("web.remote.driver.user")
     String webRemoteDriverUser();
 
-    @Config.Key("web.remote.driver.password")
+    @Key("web.remote.driver.password")
     String webRemoteDriverPassword();
 
     @Key("video.storage")
