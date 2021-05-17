@@ -56,5 +56,6 @@ public class DriverHelper {
         Configuration.browserCapabilities = capabilities;
         Configuration.browser = getDriverConfig().browserName();
         Configuration.browserVersion = getDriverConfig().browserVersion();
+        Configuration.timeout = 10000;
     }
 }
