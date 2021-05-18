@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Condition;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -23,17 +24,19 @@ public class OnlineCinemaSearchTest extends TestBase {
     void searchFilm() {
         open("");
         $(kinoButton).shouldHave(text("Онлайн-кинотеатр")).click();
-        $(".Header__content--1Rvvq .HeaderLink__icon--1YbSy").click();
-        switchTo().window(1);
-        $(".instruction__button").shouldHave(text("Как установить")).click();
-        $$(".instruction__devices-list .instruction__devices-item-holder").get(1).click();
-        $(".js-page-smart-tv").shouldBe(visible);
+        $(".Header__content--1Rvvq #transactions").click();
+        $(".ContentActions__root--18Zms .ContentActions__button_about--OYfcr").shouldBe(visible).click();
+        $(By.name("Trailer")).click();
+        $(".FullscreenIcon__icon--1tauG").click();
+        //$(".instruction__button").shouldHave(text("Как установить")).click();
+        //$$(".instruction__devices-list .instruction__devices-item-holder").get(1).click();
+        //$(".js-page-smart-tv").shouldBe(visible);
     }
 }
        /* $(kinoButton).shouldHave(text("Онлайн-кинотеатр")).click();
         $(searchButton).click();
         $(searchField).val("Mortal Kombat");
         $(searchResults).shouldHave(text("Смертельная битва")).click();
-        $(By.name("Trailer")).click();
+
         sleep(3000);
     */
