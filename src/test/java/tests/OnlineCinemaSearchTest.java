@@ -28,15 +28,5 @@ public class OnlineCinemaSearchTest extends TestBase {
         $(".ContentActions__root--18Zms .ContentActions__button_about--OYfcr").shouldBe(visible).click();
         $(By.name("Trailer")).click();
         $(".FullscreenIcon__icon--1tauG").click();
-        //$(".instruction__button").shouldHave(text("Как установить")).click();
-        //$$(".instruction__devices-list .instruction__devices-item-holder").get(1).click();
-        //$(".js-page-smart-tv").shouldBe(visible);
     }
 }
-       /* $(kinoButton).shouldHave(text("Онлайн-кинотеатр")).click();
-        $(searchButton).click();
-        $(searchField).val("Mortal Kombat");
-        $(searchResults).shouldHave(text("Смертельная битва")).click();
-
-        sleep(3000);
-    */
