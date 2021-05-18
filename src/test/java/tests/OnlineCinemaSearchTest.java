@@ -6,6 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -24,9 +25,8 @@ public class OnlineCinemaSearchTest extends TestBase {
     void searchFilm() {
         open("");
         $(kinoButton).shouldHave(text("Онлайн-кинотеатр")).click();
-        $(".Header__content--1Rvvq #transactions").click();
-        $(".ContentActions__root--18Zms .ContentActions__button_about--OYfcr").shouldBe(visible).click();
-        $(By.name("Trailer")).click();
-        $(".FullscreenIcon__icon--1tauG").click();
+        $(".HeaderContent__search-button--2aqqT").click();
+        $(".Input__input--2p4oz").val("Сериалы");
+        $(".SuggestList__content--2B-cT").shouldBe(visible);
     }
 }

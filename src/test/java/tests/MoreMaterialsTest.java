@@ -19,6 +19,5 @@ public class MoreMaterialsTest extends TestBase {
         $(".main-page-media-block .ui-button").click();
         $(".paginator__page-relative").shouldBe(visible).click();
         $(".media-desktop-list-page-layout__body").shouldBe(visible);
-        Configuration.clickViaJs = true;
     }
 }
