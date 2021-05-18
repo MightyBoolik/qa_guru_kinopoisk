@@ -23,7 +23,7 @@ public class OnlineCinemaSearchTest extends TestBase {
     void searchFilm() {
         open("");
         $(kinoButton).shouldHave(text("Онлайн-кинотеатр")).click();
-        $(".Header__content--1Rvvq .Header__avatar-wrapper--2FKkn").shouldHave(text("Установить на ТВ")).click();
+        $(".Header__content--1Rvvq .HeaderLink__icon--1YbSy").click();
         switchTo().window(1);
         $(".instruction__button").shouldHave(text("Как установить")).click();
         $$(".instruction__devices-list .instruction__devices-item-holder").get(1).click();
