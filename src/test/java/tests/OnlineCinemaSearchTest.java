@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 public class OnlineCinemaSearchTest extends TestBase {
@@ -22,10 +23,17 @@ public class OnlineCinemaSearchTest extends TestBase {
     void searchFilm() {
         open("");
         $(kinoButton).shouldHave(text("Онлайн-кинотеатр")).click();
+        $(".Header__content--1Rvvq .Header__avatar-wrapper--2FKkn").shouldHave(text("Установить на ТВ")).click();
+        switchTo().window(1);
+        $(".instruction__button").shouldHave(text("Как установить")).click();
+        $$(".instruction__devices-list .instruction__devices-item-holder").get(1).click();
+        $(".js-page-smart-tv").shouldBe(visible);
+    }
+}
+       /* $(kinoButton).shouldHave(text("Онлайн-кинотеатр")).click();
         $(searchButton).click();
         $(searchField).val("Mortal Kombat");
         $(searchResults).shouldHave(text("Смертельная битва")).click();
         $(By.name("Trailer")).click();
         sleep(3000);
-    }
-}
+    */
