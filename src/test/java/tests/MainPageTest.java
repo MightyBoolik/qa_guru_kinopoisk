@@ -7,11 +7,10 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selenide.*;
 import static tests.UserData.getTestPassword;
 import static tests.UserData.getTestUsername;
 
@@ -41,9 +40,12 @@ public class MainPageTest extends TestBase {
     @DisplayName("Вход на сайт через учетную запись Yandex")
     void loginWithYandex() {
         open("");
-        $(loginButton).shouldBe(visible).click();
+        $x("//div[@class='desktop-layout-with-sidebar__header']").shouldHave(text("Попробовать плюс")).click();
+        $(".header__inner .burger-menu").click();
+        /*$(loginButton).shouldBe(visible).click();
         $(loginField).val(getTestUsername()).pressEnter();
         $(passwordField).val(getTestPassword()).pressEnter();
         $(mainPage).shouldHave(text(primaryTitle));
+    */
     }
 }
