@@ -26,7 +26,7 @@ public class MainPageTest extends TestBase {
     @Test
     @Owner("Булат Кучаев")
     @Tag("web")
-    @JiraIssue("QC3-36")
+    @JiraIssue("TESTS-14")
     @DisplayName("Проверка загрузки элемента на главной странице")
     void visibilityOnPage() {
         open("");
